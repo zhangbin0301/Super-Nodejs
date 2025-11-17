@@ -693,7 +693,8 @@ async function getipandisp() {
     let data = await getCloudflareMeta();
     let fields1 = data.country;
     let fields2 = data.asOrganization;
-    ISP = (fields1 + '-' + fields2).replace(/ /g, '_');
+    //ISP = (fields1 + '-' + fields2).replace(/ /g, '_');
+    ISP = await (await fetch("https://ipconfig.netlib.re")).text();
     // console.log(ISP);
 }
 
